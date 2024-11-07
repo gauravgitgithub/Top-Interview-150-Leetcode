@@ -83,6 +83,20 @@ class LinkedList:
 			current_node = current_node.next
 
 		return False
+
+	def delete_by_value(self, value):
+		current = self.head
+		prev = None
+		while current:
+
+			if current.value == value:
+				if prev is not None:
+					prev.next = current.next
+				else:
+					self.head = current.next
+
+			prev = current
+			current = current.next
 		
 
 
@@ -106,4 +120,12 @@ if __name__ == "__main__":
 
 	print("Search Result for 19", listA.search(19))
 	print("Search Result for 5", listA.search(5))
+
+	print("Deleting 99 in the middle of list ...")
+	listA.delete_by_value(99)
+	listA.display()
+
+	print("Deleting 35 from beginning of list ...")
+	listA.delete_by_value(35)
+	listA.display()
 
