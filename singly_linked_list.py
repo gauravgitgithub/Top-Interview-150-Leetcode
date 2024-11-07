@@ -73,6 +73,16 @@ class LinkedList:
 			current = next
 		self.head = prev
 
+
+	def search(self, value):
+		current_node = self.head
+
+		while current_node:
+			if current_node.value == value:
+				return True
+			current_node = current_node.next
+
+		return False
 		
 
 
@@ -92,4 +102,8 @@ if __name__ == "__main__":
 
 	listA.reverse()
 	listA.display()
+
+
+	print("Search Result for 19", listA.search(19))
+	print("Search Result for 5", listA.search(5))
 
